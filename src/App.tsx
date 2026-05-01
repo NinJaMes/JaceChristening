@@ -333,14 +333,28 @@ const App: React.FC = () => {
           {/* Page 5: Sponsors / Godparents */}
           <Page number={4}>
             <h2 style={{ marginBottom: '25px' }}><Star size={24} style={{ marginRight: '10px', verticalAlign: 'middle' }} /> The Dream Team</h2>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', width: '100%', textAlign: 'left' }}>
-              <div className="glass-card">
-                <h4 style={{ color: 'var(--color-navy)', marginBottom: '15px', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '2px', textAlign: 'center', borderBottom: '1px solid var(--color-sky-blue)', paddingBottom: '5px' }}>Godfathers</h4>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                  {["Robert Chen", "David Miller", "James Wilson", "Marcus Wright"].map((name, i) => (
-                    <div key={i} style={{ textAlign: 'center' }}>
-                      <span className="script-text" style={{ fontSize: '1.2rem', color: 'var(--color-navy)' }}>{name}</span>
-                    </div>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px', width: '100%', textAlign: 'left' }}>
+              <div style={{ background: 'rgba(146, 208, 80, 0.05)', padding: '15px', borderRadius: '12px' }}>
+                <h3 style={{ fontSize: '1rem', color: 'var(--color-leaf-green)', marginBottom: '10px', borderBottom: '1px solid var(--color-sky-blue)' }}>Godfathers</h3>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                  {[
+                    "Silvano, John Kimmy",
+                    "Victor Quijano, Jr.",
+                    "Ruel Sabidor",
+                    "Jovan Andrew Lasala",
+                    "Lyndon Rose Leonor",
+                    "Ian Krayben Marabut",
+                    "Brig. Gen. Pedro A. Sumayo Jr.",
+                    "Roy Castillo",
+                    "Jubby Quiton",
+                    "Junril Colcol",
+                    "Jalilo Valenzuela",
+                    "Nino Pananganan",
+                    "Itami Seji",
+                    "Julimar Tumulak",
+                    "Romeo Caumeran"
+                  ].map((name, i) => (
+                    <span key={i} className="script-text" style={{ fontSize: '0.85rem', color: 'var(--color-navy)' }}>{name}</span>
                   ))}
                 </div>
               </div>
