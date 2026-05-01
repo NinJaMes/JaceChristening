@@ -22,6 +22,7 @@ import GolfBag from './assets/GolfBag.png';
 import TeeBall from './assets/Tee-Ball.png';
 import Flag from './assets/Flag.png';
 import QRBPI from './assets/BPI_QR.png';
+import TeddyBear from './assets/TeddyBear.png'
 // --- Types ---
 interface PageProps {
   children: React.ReactNode;
@@ -381,7 +382,7 @@ const App: React.FC = () => {
             <div style={{ width: '100%', padding: '10px' }}>
               <div className="glass-card" style={{ padding: '25px', position: 'relative', overflow: 'hidden', border: '2px solid var(--color-sky-blue)' }}>
                 <div style={{ position: 'absolute', top: 0, right: 0, opacity: 0.2 }}>
-                  <img src={GolfCart} alt="Golf Cart" style={{ width: '100px' }} />
+                  <img src={TeddyBear} alt="Teddy Bear" style={{ width: '100px' }} />
                 </div>
                 <p className="script-text" style={{ fontSize: '1.6rem', marginBottom: '15px', color: 'var(--color-soft-blue)' }}>Our Dearest Guests</p>
                 <div style={{ textAlign: 'left', fontSize: '0.9rem', color: 'var(--color-text-light)', lineHeight: '1.8' }}>
@@ -389,9 +390,7 @@ const App: React.FC = () => {
                   <p style={{ marginTop: '10px' }}>Thank you for joining us at the green as we celebrate Zaire Jace's baptism. Your presence is the best gift we could receive.</p>
                   <p style={{ marginTop: '15px' }}>Let's tee off this spiritual journey together!</p>
                 </div>
-                <div style={{ marginTop: '20px', display: 'flex', justifyContent: 'center', gap: '15px' }}>
-                  <img src={GolfBag} alt="Golf Bag" style={{ width: '80px', height: 'auto' }} />
-                </div>
+
               </div>
 
               {/* Moved Candid Moments Section */}
