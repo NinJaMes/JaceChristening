@@ -119,9 +119,11 @@ const CoverPage = forwardRef<HTMLDivElement, { babyName: string }>(({ babyName }
             gap: '15px',
             flexWrap: 'wrap'
           }}>
-            <span style={{ color: 'var(--color-soft-blue)' }}>Zaire</span>
-            <span style={{ color: 'var(--color-grass-green)' }}>Jace</span>
-            <span style={{ color: 'var(--color-soft-blue)' }}>Capin</span>
+            {babyName.split(' ').map((part, index) => (
+              <span key={index} style={{ color: index % 2 === 0 ? 'var(--color-soft-blue)' : 'var(--color-grass-green)' }}>
+                {part}
+              </span>
+            ))}
           </h1>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', textAlign: 'left', width: '100%', maxWidth: '300px', margin: '15px auto' }}>
