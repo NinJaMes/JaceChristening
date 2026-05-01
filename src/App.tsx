@@ -2,7 +2,6 @@ import React, { forwardRef, useRef, useState, useEffect } from 'react';
 import HTMLFlipBook from 'react-pageflip';
 import { motion } from 'framer-motion';
 import {
-  Calendar,
   MapPin,
   Users,
   Star,
@@ -10,20 +9,16 @@ import {
   ChevronLeft,
   Gift,
   Music,
-  Clock,
   Camera,
-  QrCode,
-  Church
+  QrCode as QrIcon,
+  Church,
+  Heart
 } from 'lucide-react';
-import { QRCodeSVG } from 'qrcode.react';
-
 // Import Assets for correct resolution in production
 import FrontPage from './assets/FrontPage.jpeg';
-import SonsBanner from './assets/SonsBanner.png';
 import BabyGolf from './assets/BabyGolf.png';
 import GolfCart from './assets/GolfCart.png';
 import GolfBag from './assets/GolfBag.png';
-import TeddyBear from './assets/TeddyBear.png';
 import TeeBall from './assets/Tee-Ball.png';
 import Flag from './assets/Flag.png';
 import QRBPI from './assets/BPI_QR.png';
@@ -69,14 +64,12 @@ const Page = forwardRef<HTMLDivElement, PageProps>((props, ref) => {
     </div>
   );
 });
-
 const CoverPage = forwardRef<HTMLDivElement, { babyName: string }>(({ babyName }, ref) => {
   return (
     <div className="page page-cover page-right" ref={ref} data-density="hard">
       <div className="page-stack" style={{ right: 0 }}></div>
       <div className="page-border-decorative"></div>
-
-      <img src={FrontPage} alt="Baby Golfer" style={{ width: '100%', height: '100%' }} />
+      <img src={FrontPage} alt={babyName} style={{ width: '100%', height: '100%' }} />
     </div>
   );
 });
@@ -140,7 +133,7 @@ const App: React.FC = () => {
           maxWidth={3000}
           minHeight={100}
           maxHeight={3000}
-          maxShadowOpacity={0.6}
+          maxShadowOpacity={0.8}
           showCover={true}
           mobileScrollSupport={true}
           onFlip={onPage}
@@ -157,9 +150,6 @@ const App: React.FC = () => {
           swipeDistance={1}
           showPageCorners={true}
           disableFlipByClick={false}
-          stretchFonts={true}
-          maxShadowOpacity={0.8}
-          orientation={window.innerWidth <= 768 ? 'portrait' : 'landscape'}
         >
           {/* Page 1: Cover */}
           <CoverPage babyName={babyName} />
@@ -340,11 +330,31 @@ const App: React.FC = () => {
               </div>
 
               <div className="glass-card">
-                <h4 style={{ color: 'var(--color-navy)', marginBottom: '15px', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '2px', textAlign: 'center', borderBottom: '1px solid var(--color-sky-blue)', paddingBottom: '5px' }}>Ninang</h4>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
-                  {["Elena Rodriguez", "Sarah Thompson", "Grace Lee", "Sophia Garcia"].map((name, i) => (
-                    <div key={i} style={{ textAlign: 'center' }}>
-                      <span className="script-text" style={{ fontSize: '1.2rem', color: 'var(--color-navy)' }}>{name}</span>
+                <h4 style={{ color: 'var(--color-leaf-green)', marginBottom: '15px', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '2px', textAlign: 'center', borderBottom: '1px solid var(--color-sky-blue)', paddingBottom: '5px' }}>Ninang</h4>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                  {[
+                    "Alexis Margret Aberion",
+                    "Roxanne Kathlyn Alivio",
+                    "Hannah Barba",
+                    "Mary Thaira Elyne Baynosa",
+                    "Mary Trixia Elyonne Baynosa",
+                    "Erica Jean Booc",
+                    "Adelaida Capin",
+                    "Alvie Deloria",
+                    "Darla Marie Desuasido",
+                    "Sarah Mae Galve",
+                    "Antoniette Sison Guevarra",
+                    "Ma Joy Hera",
+                    "Ai Kajiwara",
+                    "Princess Mae Labaniego",
+                    "Stephanie Zoe Rojo",
+                    "Aira Abigail Villar"
+                  ].map((name, i) => (
+                    <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <span style={{ fontSize: '0.6rem', color: 'var(--color-grass-green)', opacity: 0.8 }}><Heart size={10} style={{ verticalAlign: 'middle' }} /></span>
+                      <span className="script-text" style={{ fontSize: '0.85rem', color: 'var(--color-navy)', borderBottom: '1px solid rgba(157, 195, 230, 0.2)', width: '100%', paddingBottom: '2px' }}>
+                        {name}
+                      </span>
                     </div>
                   ))}
                 </div>
@@ -415,7 +425,7 @@ const App: React.FC = () => {
                   Upload Photos 📸
                 </a>
 
-                <QrCode size={100} value="https://drive.google.com/drive/folders/1Vm_pUUB0rcmJnA3HBB0gygVSnvBZi9b_?usp=sharing" />
+                <QrIcon size={100} />
               </div>
             </div>
           </Page>
@@ -440,7 +450,7 @@ const App: React.FC = () => {
                   size={180}
                   fgColor="var(--color-navy)"
                 /> */}
-                <img src={QRBPI} alt="QRBPI " style={{ width: '20%', height: 'auto' }} />
+                <img src={QRBPI} alt="QRBPI " style={{ width: '100%', height: 'auto' }} />
               </div>
             </div>
 
