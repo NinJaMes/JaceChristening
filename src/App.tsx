@@ -1,15 +1,13 @@
 import React, { forwardRef, useRef, useState, useEffect } from 'react';
 import HTMLFlipBook from 'react-pageflip';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import {
-  Heart,
   Calendar,
   MapPin,
   Users,
   Star,
   ChevronRight,
   ChevronLeft,
-  QrCode,
   Gift,
   Music,
   Clock,
@@ -60,7 +58,7 @@ const Page = forwardRef<HTMLDivElement, PageProps>((props, ref) => {
   );
 });
 
-const CoverPage = forwardRef<HTMLDivElement, { babyName: string }>((props, ref) => {
+const CoverPage = forwardRef<HTMLDivElement, { babyName: string }>(({ babyName }, ref) => {
   return (
     <div className="page page-cover page-right" ref={ref} data-density="hard">
       <div className="page-stack" style={{ right: 0 }}></div>
@@ -461,7 +459,7 @@ const App: React.FC = () => {
                   <a 
                     href="tel:09568498784" 
                     style={{ color: 'var(--color-navy)', textDecoration: 'none', fontWeight: 'bold', fontSize: '1rem', borderBottom: '1px dashed var(--color-soft-blue)' }}
-                    onClick={(e) => {
+                    onClick={() => {
                       navigator.clipboard.writeText("09568498784");
                       alert("GCash Number Copied!");
                     }}
@@ -474,7 +472,7 @@ const App: React.FC = () => {
                   <a 
                     href="tel:09568498784" 
                     style={{ color: 'var(--color-navy)', textDecoration: 'none', fontWeight: 'bold', fontSize: '1rem', borderBottom: '1px dashed var(--color-soft-blue)' }}
-                    onClick={(e) => {
+                    onClick={() => {
                       navigator.clipboard.writeText("09568498784");
                       alert("Maya Number Copied!");
                     }}
